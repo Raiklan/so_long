@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 17:14:09 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 18:12:35 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@ void	ft_error(char *nature, char *all_chars)
 	ft_putendl_fd(nature, 2);
 	free(all_chars);
 	exit (0);
+}
+
+static void	check_last_line(t_game *game, char *all_chars)
+{
+	int	i;
+
+	i = game->total_line_char * (game->line_number - 2);
+	while (all_chars[i] != '\0')
+	{
+		if (all_chars[i] != '1')
+		{
+			ft_error("Error\nMap is not bounded by walls", all_chars);
+			exit (1);
+		}
+		i++;
+	}
 }
 
 void	check_walls(char *line)
@@ -78,13 +94,13 @@ void	deal_ret(int ret, t_game *game, char *line, char *all_chars)
 		if ((ret != 0) && (ft_strlen(line)
 				!= (long unsigned int)game->total_line_char))
 			ft_error("Error\nmap has a problem", all_chars);
-		if (ret == 0)
+		else if (ret == 0)
 		{
 			game->line_number++;
-			check_walls(line);
 			ft_strcat(all_chars, line);
 			free(line);
 			line = 0;
+			check_last_line(game, all_chars);
 		}
 	}
 }

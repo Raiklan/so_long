@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:47 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:39:08 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 18:46:02 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	init_map2(t_game *game, char *all_chars)
 		|| (ft_strchr(all_chars, 'C') == NULL))
 		ft_error("Error\nMissing one player, one collectible or one exit",
 			all_chars);
-	if (game->line_number - 1 == game->total_line_char)
-		ft_error("Error\nMap is square!", all_chars);
+	//if (game->line_number - 1 == game->total_line_char)
+	//	ft_error("Error\nMap is square!", all_chars);
 	check_map_elements(all_chars);
 	game->map_height = (game->line_number - 1) * 40;
 	game->map_width = game->total_line_char * 40;
