@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:21:06 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:21:10 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:27:11 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {

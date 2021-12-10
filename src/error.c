@@ -6,12 +6,12 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:56:29 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:27:26 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-#include "../gnl/get_next_line.h"
+#include "../includes/so_long.h"
+#include "../includes/get_next_line.h"
 
 void	ft_error(char *nature, char *all_chars)
 {

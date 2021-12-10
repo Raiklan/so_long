@@ -6,18 +6,18 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:15:35 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:57:54 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:28:19 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./libft/libft.h"
-# include "./mlx/mlx.h"
-# include "./mlx/mlx_int.h"
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
+# include "../mlx/mlx_int.h"
 # include <stdio.h>
-# include "./gnl/get_next_line.h"
+# include "../includes/get_next_line.h"
 
 typedef struct s_mlx
 {

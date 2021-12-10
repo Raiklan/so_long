@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:10:46 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:20:56 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:27:01 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 char	*get_statik(char *statik)
 {

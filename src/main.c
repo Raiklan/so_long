@@ -6,12 +6,12 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:47 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:59:35 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:26:32 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../gnl/get_next_line.h"
-#include "../so_long.h"
+#include "../includes/get_next_line.h"
+#include "../includes/so_long.h"
 
 void	init_map2(t_game *game, char *whole_chars)
 {

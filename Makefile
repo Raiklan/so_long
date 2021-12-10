@@ -1,34 +1,47 @@
-NAME = so_long
-LIBFT = libft/libft.a
-FLAGS = -Wall -Wextra -Werror
-SRC =   src/main.c              \
-        src/error.c            \
-        src/draw.c              \
-        src/texture_and_mlx.c   \
-        src/key.c               \
-        src/moves.c             \
-        gnl/get_next_line.c     \
-        gnl/get_next_line_utils.c  \
+NAME			=	so_long
 
-INC =   so_long.h               \
-        gnl/get_next_line.h     \
 
-LIB = -L ./libft -lft -L ./mlx -lmlx -lXext -lX11
 
-all: $(NAME)
+SRCS			=	main.c              \
+					error.c            \
+					draw.c              \
+					texture_and_mlx.c   \
+					key.c               \
+					moves.c             \
+					get_next_line.c     \
+					get_next_line_utils.c  \
 
-$(NAME):
-	cd mlx/ && ./configure
-	gcc -g3 -fsanitize=address $(FLAGS) -o $(NAME) $(SRC) $(LIB)
+OBJS			=	${addprefix src/,${SRCS:.c=.o}}
 
-skiperror:
-	gcc -o $(NAME) $(SRC) -g $(LIB)
+LD_FLAGS		=	-L libft -L mlx
 
-clean:
-	@rm -rf *.o
-	@echo "cleaning .o files"
+MLX_FLAGS		=	-lmlx -lXext -lX11
 
-fclean: clean
-	@rm -rf $(NAME)
+HEAD			=	-I includes -I libft -I mlx
 
-re: fclean all
+CC				=	gcc
+
+CFLAGS			=	-Wall -Werror -Wextra -g #-fsanitize=address
+
+all				:	${NAME}
+
+c.o			:
+					${CC} ${CFLAGS} ${HEAD} -c $< -o ${<:.c=.o}
+
+$(NAME)		:	${OBJS}
+					@make -C libft
+					@make -C mlx
+					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} -lft $(MLX_FLAGS)
+
+clean			:
+					make clean -C libft
+					make clean -C mlx
+					@rm -rf ${OBJS}
+
+fclean			:	clean
+					make fclean -C libft
+					@rm -rf ${NAME}
+
+re				:	fclean all
+
+.PHONY			:	all clean fclean re
