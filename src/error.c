@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:27:26 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 16:40:25 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	deal_ret(int ret, t_game *game, char *line, char *all_chars)
 		free(line);
 		line = 0;
 		ret = get_next_line(game->fd, &line);
-		if ((ret != 0) && (strlen(line)
+		if ((ret != 0) && (ft_strlen(line)
 				!= (long unsigned int)game->total_line_char))
 			ft_error("Error\nmap has a problem", all_chars);
 		if (ret == 0)
