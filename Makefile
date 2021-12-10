@@ -1,4 +1,4 @@
-NAME = So_long
+NAME = so_long
 LIBFT = libft/libft.a
 FLAGS = -Wall -Wextra -Werror
 SRC =   src/main.c              \
