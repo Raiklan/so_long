@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:25:21 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:25:39 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:55:46 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	exit_hook(t_game *game)
 {

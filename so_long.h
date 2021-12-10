@@ -6,18 +6,18 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:15:35 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:21:45 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:57:54 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft.h"
-# include "../mlx/mlx.h"
-# include "../mlx/mlx_int.h"
+# include "./libft/libft.h"
+# include "./mlx/mlx.h"
+# include "./mlx/mlx_int.h"
 # include <stdio.h>
-# include "get_next_line.h"
+# include "./gnl/get_next_line.h"
 
 typedef struct s_mlx
 {
@@ -33,11 +33,6 @@ typedef struct s_coord
 	int	y;
 }	t_coord;
 
-/*
-	W 119 A 97 S 115
- 	D 100
- 	ESC 65307
-*/
 typedef struct s_game
 {
 	t_mlx	mlx;
@@ -60,5 +55,30 @@ typedef struct s_game
 	int		x;
 	int		y;
 }	t_game;
+
+unsigned int	mlx_rgb_to_int(int o, int r, int g, int b);
+void			mlx_draw_pixel(t_img *mlx_img, int x, int y, int color);
+unsigned int	mlx_get_pixel(t_img *img, int x, int y);
+void			texture_init(t_game *game);
+void			texture_load(t_game *game, t_img **img, char *path);
+void			move_left(t_game *game);
+void			move_right(t_game *game);
+void			move_up(t_game *game);
+void			move_bottom(t_game *game);
+int				exit_hook(t_game *game);
+void			is_game_finished(t_game *game);
+int				reduce_window(t_game *game);
+int				key_hook(int keycode, t_game *game);
+void			ft_error(char *nature, char *all_chars);
+void			check_walls(char *line);
+void			check_map_elements(char *all_chars);
+void			deal_ret(int ret, t_game *game, char *line, char *all_chars);
+void			draw_square(t_game *game, t_img *img, int x, int y);
+void			check_for_elements(t_game *game, int x, int y, int z);
+void			draw_map(t_game *game);
+void			init_map2(t_game *game, char *whole_chars);
+int				init_struc(t_game *game);
+void			check_arg(int ac, char **av);
+int				init_map(t_game *game, char *map_name);
 
 #endif

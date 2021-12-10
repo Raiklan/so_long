@@ -20,6 +20,8 @@ OBJ = ft_memset.o \
     ft_strlcpy.o \
     ft_strlcat.o \
     ft_strnstr.o \
+	ft_strcat.o \
+	ft_strcmp.o \
     ft_atoi.o \
     ft_calloc.o \
     ft_strdup.o \

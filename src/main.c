@@ -6,13 +6,12 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:47 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:24:39 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:59:35 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
-#include <unistd.h>
-#include "so_long.h"
+#include "../gnl/get_next_line.h"
+#include "../so_long.h"
 
 void	init_map2(t_game *game, char *whole_chars)
 {
@@ -77,7 +76,7 @@ int	init_map(t_game *game, char *map_name)
 	game->line_number = 0;
 	game->fd = open(map_name, O_RDONLY);
 	if (game->fd == -1)
-		ft_error("Eroor\nFile cannot be opened/read");
+		ft_error("Eroor\nFile cannot be opened/read", all_chars);
 	line = 0;
 	ret = get_next_line(game->fd, &line);
 	check_walls(line);
@@ -96,7 +95,7 @@ int	main(int ac, char **av)
 	init_struc(&game);
 	draw_map(&game);
 	mlx_key_hook(game.mlx.mlx_win, key_hook, &game);
-	mlx_hook(game.mlx.mlx_win, 33, 1L << 5, exit_win, &game);
-	mlx_hook(game.mlx.mlx_win, 15, 1L << 16, reduce_win, &game);
+	mlx_hook(game.mlx.mlx_win, 33, 1L << 5, exit_hook, &game);
+	mlx_hook(game.mlx.mlx_win, 15, 1L << 16, reduce_window, &game);
 	mlx_loop(game.mlx.mlx);
 }

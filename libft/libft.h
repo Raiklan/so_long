@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 12:13:20 by rtulchiy          #+#    #+#             */
-/*   Updated: 2021/12/07 18:56:23 by saich            ###   ########.fr       */
+/*   Created: 2019/10/26 12:13:20 by saich             #+#    #+#             */
+/*   Updated: 2021/12/08 18:02:29 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_islower(int c);
 int				ft_isupper(int c);
+char			*ft_strcat(char *dest, const char *src);
 int				ft_strcmp(const char *s1, const char *s2);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);

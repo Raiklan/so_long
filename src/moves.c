@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:26:44 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:38:19 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:55:59 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	move_bottom(t_game *game)
 {

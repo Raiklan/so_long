@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:31:36 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:32:01 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:55:42 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	draw_square(t_game *game, t_img *img, int x, int y)
 {

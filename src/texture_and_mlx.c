@@ -6,11 +6,11 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:27:41 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 17:28:02 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/08 17:56:06 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	texture_load(t_game *game, t_img **img, char *path)
 {
