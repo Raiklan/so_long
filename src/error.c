@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:40:25 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/10 17:14:09 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_map_elements(char *all_chars)
 		i++;
 	}
 	if (count_p > 1)
-		ft_error("only one player should be on the map", all_chars);
+		ft_error("Error\nonly one player should be on the map", all_chars);
 }
 
 void	deal_ret(int ret, t_game *game, char *line, char *all_chars)
