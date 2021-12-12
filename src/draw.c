@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:31:36 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:27:31 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/12 05:37:31 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,16 @@ void	draw_map(t_game *game)
 	}
 	mlx_put_image_to_window(game->mlx.mlx, game->mlx.mlx_win,
 		game->mlx.mlx_img, 0, 0);
+}
+
+void	ft_error_line(char *nature, char *all_chars, char *line)
+{
+	ft_putendl_fd(nature, 2);
+	free(all_chars);
+	if (line)
+	{
+		free(line);
+		line = 0;
+	}
+	exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:15:35 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:28:19 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/12 05:36:07 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void			is_game_finished(t_game *game);
 int				reduce_window(t_game *game);
 int				key_hook(int keycode, t_game *game);
 void			ft_error(char *nature, char *all_chars);
+void			ft_error_line(char *nature, char *all_chars, char *line);
 void			check_walls(char *line);
 void			check_map_elements(char *all_chars);
 void			deal_ret(int ret, t_game *game, char *line, char *all_chars);

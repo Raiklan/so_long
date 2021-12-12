@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:25:21 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 16:26:39 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/12 04:59:47 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 int	exit_hook(t_game *game)
 {
+	mlx_destroy_image(game->mlx.mlx, game->ground);
+	mlx_destroy_image(game->mlx.mlx, game->exit);
+	mlx_destroy_image(game->mlx.mlx, game->tree);
+	mlx_destroy_image(game->mlx.mlx, game->player);
+	if (game->collectible)
+		mlx_destroy_image(game->mlx.mlx, game->collectible);
+	mlx_destroy_image(game->mlx.mlx, game->mlx.mlx_img);
+	if (game->mlx.mlx_win)
+		mlx_destroy_window(game->mlx.mlx, game->mlx.mlx_win);
+	mlx_destroy_display(game->mlx.mlx);
+	if (game->mlx.mlx)
+		free(game->mlx.mlx);
 	free(game->map);
 	exit(1);
 }

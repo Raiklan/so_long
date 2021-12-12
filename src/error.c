@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 18:12:35 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/12 05:40:00 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,14 @@ void	deal_ret(int ret, t_game *game, char *line, char *all_chars)
 		game->line_number++;
 		game->endline = ft_strlen(line) - 1;
 		if (line[0] != '1' || line[game->endline] != '1')
-			ft_error("Error\nWall missing in the border", all_chars);
+			ft_error_line("Error\nWall missing in the border", all_chars, line);
 		ft_strcat(all_chars, line);
 		free(line);
 		line = 0;
 		ret = get_next_line(game->fd, &line);
 		if ((ret != 0) && (ft_strlen(line)
 				!= (long unsigned int)game->total_line_char))
-			ft_error("Error\nmap has a problem", all_chars);
+			ft_error_line("Error\nmap has a problem", all_chars, line);
 		else if (ret == 0)
 		{
 			game->line_number++;
