@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 12:13:20 by saich             #+#    #+#             */
-/*   Updated: 2021/12/08 18:02:29 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 17:55:54 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 char			*ft_strjoinfree(char const *s1, char const *s2, int frees1,
 					int frees2);
 char			*ft_itoa_base(int nbr, char *base);
+int				check_malloc(void *dest, size_t size);
 
 #endif
 

@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:31:36 by saich             #+#    #+#             */
-/*   Updated: 2021/12/12 05:37:31 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 17:53:09 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,19 @@ void	ft_error_line(char *nature, char *all_chars, char *line)
 		line = 0;
 	}
 	exit (0);
+}
+
+int	count_read(char *map_file)
+{
+	char	buf;
+	int		i;
+	int		fd;
+
+	fd = open(map_file, O_RDONLY);
+	if (fd == -1)
+		return (-1);
+	while (read(fd, &buf, 1))
+		i++;
+	close(fd);
+	return (i);
 }

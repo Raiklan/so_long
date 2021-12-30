@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:47 by saich             #+#    #+#             */
-/*   Updated: 2021/12/10 18:49:10 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 18:14:02 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	init_map2(t_game *game, char *all_chars)
 	game->map_width = game->total_line_char * 40;
 	game->map = malloc(sizeof(char)
 			* (game->total_line_char * game->line_number) + 1);
+	if (game->map == NULL)
+		ft_error("Error\nMemory alloc failed", all_chars);
+	check_res(game->map_height, game->map_width, all_chars);
 	ft_strlcpy(game->map, all_chars,
 		(game->line_number * game->total_line_char));
 	game->fd = close(game->fd);
@@ -69,7 +72,12 @@ int	init_map(t_game *game, char *map_name)
 	int		ret;
 	char	*all_chars;
 
-	all_chars = (char *)malloc(sizeof(char) * 10000);
+	all_chars = (char *)malloc(sizeof(char) * count_read(map_name));
+	if (all_chars == NULL)
+	{
+		ft_putendl_fd("Error\nWhile allocating mem", 2);
+		exit(0);
+	}
 	*all_chars = 0;
 	game->line_number = 0;
 	game->fd = open(map_name, O_RDONLY);

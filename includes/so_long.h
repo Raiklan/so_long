@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:15:35 by saich             #+#    #+#             */
-/*   Updated: 2021/12/12 05:36:07 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 18:22:03 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void			init_map2(t_game *game, char *whole_chars);
 int				init_struc(t_game *game);
 void			check_arg(int ac, char **av);
 int				init_map(t_game *game, char *map_name);
+int				count_read(char *map_file);
+void			check_res(int map_height, int map_width, char *all_chars);
 
 #endif

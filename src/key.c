@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:25:21 by saich             #+#    #+#             */
-/*   Updated: 2021/12/12 04:59:47 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 18:13:09 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	exit_hook(t_game *game)
 	if (game->mlx.mlx)
 		free(game->mlx.mlx);
 	free(game->map);
-	exit(1);
+	exit(EXIT_SUCCESS);
 }
 
 void	is_game_finished(t_game *game)
@@ -82,4 +82,12 @@ int	key_hook(int keycode, t_game *game)
 	is_game_finished(game);
 	draw_map(game);
 	return (1);
+}
+
+void	check_res(int map_height, int map_width, char *all_chars)
+{
+	if (map_height > 1920 || map_width > 1080)
+	{
+		ft_error("Error\nMap resolution > 1920*1080", all_chars);
+	}
 }

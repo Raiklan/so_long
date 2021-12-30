@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:28:42 by saich             #+#    #+#             */
-/*   Updated: 2021/12/12 05:40:00 by saich            ###   ########.fr       */
+/*   Updated: 2021/12/30 18:00:35 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_error(char *nature, char *all_chars)
 {
 	ft_putendl_fd(nature, 2);
 	free(all_chars);
-	exit (0);
+	exit (EXIT_SUCCESS);
 }
 
 static void	check_last_line(t_game *game, char *all_chars)
@@ -30,7 +30,7 @@ static void	check_last_line(t_game *game, char *all_chars)
 		if (all_chars[i] != '1')
 		{
 			ft_error("Error\nMap is not bounded by walls", all_chars);
-			exit (1);
+			exit (EXIT_SUCCESS);
 		}
 		i++;
 	}
@@ -47,7 +47,7 @@ void	check_walls(char *line)
 		{
 			ft_putendl_fd("map is not surrounded by walls", 2);
 			free(line);
-			exit (1);
+			exit (EXIT_SUCCESS);
 		}
 		i++;
 	}
@@ -71,7 +71,7 @@ void	check_map_elements(char *all_chars)
 			ft_putendl_fd
 			("Error\nFile contains different character than 1, 0, P, E or C", 2);
 			free(all_chars);
-			exit (1);
+			exit (EXIT_SUCCESS);
 		}
 		i++;
 	}
