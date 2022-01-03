@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:25:21 by saich             #+#    #+#             */
-/*   Updated: 2021/12/30 18:13:09 by saich            ###   ########.fr       */
+/*   Updated: 2022/01/03 15:57:27 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	key_hook(int keycode, t_game *game)
 
 void	check_res(int map_height, int map_width, char *all_chars)
 {
-	if (map_height > 1920 || map_width > 1080)
+	if (map_width > 1920 || map_height > 1080)
 	{
 		ft_error("Error\nMap resolution > 1920*1080", all_chars);
 	}

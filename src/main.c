@@ -6,7 +6,7 @@
 /*   By: saich <saich@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:47 by saich             #+#    #+#             */
-/*   Updated: 2021/12/30 18:14:02 by saich            ###   ########.fr       */
+/*   Updated: 2022/01/03 15:48:20 by saich            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ int	init_map(t_game *game, char *map_name)
 	int		ret;
 	char	*all_chars;
 
+	if (count_read(map_name) == -1)
+	{
+		ft_putendl_fd("Error\nfile cannot be opened/read", 2);
+		exit(0);
+	}
 	all_chars = (char *)malloc(sizeof(char) * count_read(map_name));
 	if (all_chars == NULL)
 	{
@@ -81,8 +86,6 @@ int	init_map(t_game *game, char *map_name)
 	*all_chars = 0;
 	game->line_number = 0;
 	game->fd = open(map_name, O_RDONLY);
-	if (game->fd == -1)
-		ft_error("Error\nFile cannot be opened/read", all_chars);
 	line = 0;
 	ret = get_next_line(game->fd, &line);
 	check_walls(line);
